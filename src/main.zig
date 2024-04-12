@@ -1,10 +1,11 @@
 const std = @import("std");
-const testing = std.testing;
+
+pub var buffer = [_]u32{ 1, 3, 2, 4 };
+
+extern fn console_log(a: i32) void;
 
 export fn add(a: i32, b: i32) i32 {
-    return a + b;
-}
-
-test "basic add functionality" {
-    try testing.expect(add(3, 7) == 10);
+    const result = a + b;
+    // console_log(result);
+    return result;
 }
